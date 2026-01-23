@@ -73,7 +73,7 @@ export default function Home() {
       <main className="px-4 py-6 space-y-6">
         {/* Location Bar */}
         <LocationBar 
-          location="San Francisco, CA" 
+          location="Manila, Philippines" 
           onChangeLocation={() => console.log("Change location")}
         />
 
