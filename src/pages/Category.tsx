@@ -4,7 +4,7 @@ import { PageHeader } from "@/components/PageHeader";
 import { DiscountCard } from "@/components/DiscountCard";
 import { BottomNav } from "@/components/BottomNav";
 
-// Mock data for demonstration
+// Mock data for demonstration - Philippine businesses
 const mockDiscounts: Record<string, Array<{
   id: string;
   businessName: string;
@@ -12,35 +12,41 @@ const mockDiscounts: Record<string, Array<{
   distance: string;
 }>> = {
   restaurants: [
-    { id: "1", businessName: "Golden Corral", discount: "15% off for 60+", distance: "0.5 miles" },
-    { id: "2", businessName: "Denny's", discount: "20% off breakfast for 55+", distance: "1.2 miles" },
-    { id: "3", businessName: "IHOP", discount: "10% off all meals for 55+", distance: "1.8 miles" },
-    { id: "4", businessName: "Applebee's", discount: "15% off for seniors", distance: "2.1 miles" },
+    { id: "1", businessName: "Jollibee", discount: "20% off for Senior Citizens", distance: "0.3 km" },
+    { id: "2", businessName: "Max's Restaurant", discount: "20% off all meals for 60+", distance: "0.8 km" },
+    { id: "3", businessName: "Mang Inasal", discount: "20% off for seniors", distance: "1.2 km" },
+    { id: "4", businessName: "Goldilocks", discount: "20% off cakes & pastries for 60+", distance: "1.5 km" },
+    { id: "5", businessName: "Chowking", discount: "20% off for Senior Citizens", distance: "0.5 km" },
   ],
   groceries: [
-    { id: "5", businessName: "Safeway", discount: "10% off on Tuesdays for 55+", distance: "0.3 miles" },
-    { id: "6", businessName: "Kroger", discount: "5% off all purchases for 60+", distance: "0.8 miles" },
-    { id: "7", businessName: "Whole Foods", discount: "10% off for Prime members 60+", distance: "1.5 miles" },
+    { id: "6", businessName: "SM Supermarket", discount: "5% off + 20% SC discount", distance: "1.0 km" },
+    { id: "7", businessName: "Puregold", discount: "20% off for seniors daily", distance: "0.6 km" },
+    { id: "8", businessName: "Robinsons Supermarket", discount: "20% SC discount on groceries", distance: "1.8 km" },
+    { id: "9", businessName: "Metro Supermarket", discount: "20% off for 60+ on all items", distance: "2.0 km" },
   ],
   travel: [
-    { id: "8", businessName: "Amtrak", discount: "10% off for 62+", distance: "3.0 miles" },
-    { id: "9", businessName: "Southwest Airlines", discount: "Special senior fares for 65+", distance: "15 miles" },
-    { id: "10", businessName: "Enterprise", discount: "5% off car rentals for 50+", distance: "2.5 miles" },
+    { id: "10", businessName: "Philippine Airlines", discount: "20% off domestic flights for 60+", distance: "NAIA" },
+    { id: "11", businessName: "Cebu Pacific", discount: "20% senior discount on base fare", distance: "NAIA" },
+    { id: "12", businessName: "2GO Travel", discount: "20% off ferry tickets for seniors", distance: "Manila Port" },
+    { id: "13", businessName: "Victory Liner", discount: "20% off bus fare for 60+", distance: "Cubao Terminal" },
   ],
   entertainment: [
-    { id: "11", businessName: "AMC Theatres", discount: "30% off on Senior Days for 60+", distance: "1.0 miles" },
-    { id: "12", businessName: "Regal Cinemas", discount: "25% off tickets for 60+", distance: "2.2 miles" },
-    { id: "13", businessName: "Local Museum", discount: "Free admission for 65+", distance: "0.7 miles" },
+    { id: "14", businessName: "SM Cinema", discount: "20% off movie tickets for 60+", distance: "1.0 km" },
+    { id: "15", businessName: "Ayala Cinemas", discount: "20% senior discount on tickets", distance: "2.5 km" },
+    { id: "16", businessName: "National Museum", discount: "Free admission for all", distance: "Manila" },
+    { id: "17", businessName: "Ocean Park Manila", discount: "20% off entrance for seniors", distance: "5.0 km" },
   ],
   healthcare: [
-    { id: "14", businessName: "CVS Pharmacy", discount: "20% off on Senior Days for 60+", distance: "0.4 miles" },
-    { id: "15", businessName: "Walgreens", discount: "15% off for Seniors on Tuesdays", distance: "0.6 miles" },
-    { id: "16", businessName: "GoodRx", discount: "Extra 5% off for 55+", distance: "Online" },
+    { id: "18", businessName: "Mercury Drug", discount: "20% off medicines for 60+", distance: "0.2 km" },
+    { id: "19", businessName: "Watsons", discount: "20% SC discount on medicines", distance: "0.4 km" },
+    { id: "20", businessName: "The Generics Pharmacy", discount: "20% off + additional 5% for seniors", distance: "0.5 km" },
+    { id: "21", businessName: "Rose Pharmacy", discount: "20% off prescriptions for 60+", distance: "0.8 km" },
   ],
   shopping: [
-    { id: "17", businessName: "Kohl's", discount: "15% off on Wednesdays for 60+", distance: "2.0 miles" },
-    { id: "18", businessName: "Ross", discount: "10% off on Tuesdays for 55+", distance: "1.3 miles" },
-    { id: "19", businessName: "Goodwill", discount: "25% off for seniors on Tuesdays", distance: "0.9 miles" },
+    { id: "22", businessName: "SM Department Store", discount: "20% off on senior days", distance: "1.0 km" },
+    { id: "23", businessName: "Robinsons Department Store", discount: "20% SC discount storewide", distance: "1.5 km" },
+    { id: "24", businessName: "Landmark", discount: "20% off for seniors daily", distance: "2.0 km" },
+    { id: "25", businessName: "Handyman", discount: "20% off hardware items for 60+", distance: "1.2 km" },
   ],
 };
 
