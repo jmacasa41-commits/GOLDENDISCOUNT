@@ -56,11 +56,11 @@ export default function Welcome() {
           </div>
 
           <div className="space-y-3 md:space-y-4 px-2">
-            <h1 className="text-senior-2xl md:text-senior-3xl font-black text-slate-800 tracking-tighter uppercase italic leading-[0.9] md:leading-none">
+            <h1 className="text-[2.2rem] sm:text-senior-2xl md:text-senior-3xl font-black text-slate-800 tracking-tighter uppercase italic leading-[0.85] md:leading-none">
               GOLDEN<span className="opacity-60 not-italic font-light">CONNECT</span>
             </h1>
-            <div className="flex items-center justify-center gap-3 text-slate-700 py-2 px-6 bg-slate-100/90 backdrop-blur-sm rounded-2xl md:rounded-full w-full max-w-[90%] mx-auto border border-slate-300 shadow-sm overflow-hidden line-clamp-2">
-              <span className="text-[13px] md:text-senior-sm font-black uppercase tracking-wider md:tracking-[0.2em] leading-snug">
+            <div className="flex items-center justify-center gap-3 text-slate-700 py-2 px-4 sm:px-6 bg-slate-100/90 backdrop-blur-sm rounded-2xl md:rounded-full w-full max-w-[95%] mx-auto border border-slate-300 shadow-sm overflow-hidden">
+              <span className="text-[12px] sm:text-[13px] md:text-senior-sm font-black uppercase tracking-tight sm:tracking-wider md:tracking-[0.2em] leading-tight text-center">
                 A simple way for seniors to find discounts nearby.
               </span>
             </div>
