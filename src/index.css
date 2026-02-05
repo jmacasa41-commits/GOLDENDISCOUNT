@@ -2,41 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-/* GoldenConnect Design System - Senior-Friendly Theme
+/* GOLDEN CONNECT Design System - Senior-Friendly Theme
+
    Warm, accessible colors with high contrast for 50+ users
    All colors in HSL format */
 
 @layer base {
   :root {
-    /* Core backgrounds - warm cream tones */
-    --background: 40 100% 97%;
-    --foreground: 0 0% 18%;
+    /* Core backgrounds - Warm Gray */
+    --background: 60 5% 95%;
+    /* #F4F4F2 */
+    --foreground: 0 0% 20%;
+    /* #333333 */
 
     /* Card surfaces */
-    --card: 40 100% 99%;
-    --card-foreground: 0 0% 18%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 20%;
 
     /* Popover */
-    --popover: 40 100% 99%;
-    --popover-foreground: 0 0% 18%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 20%;
 
-    /* Primary - Warm Gold */
-    --primary: 42 65% 58%;
-    --primary-foreground: 0 0% 18%;
+    /* Primary - Dark Navy (Professional & Trustworthy) */
+    --primary: 210 29% 24%;
+    /* #2C3E50 */
+    --primary-foreground: 0 0% 100%;
 
-    /* Secondary - Deep Navy */
-    --secondary: 213 52% 24%;
-    --secondary-foreground: 0 0% 98%;
+    /* Secondary - Soft Gold (Accent) */
+    --secondary: 43 51% 57%;
+    /* #C8A95A */
+    --secondary-foreground: 0 0% 20%;
 
-    /* Muted - Soft cream */
-    --muted: 40 30% 92%;
-    --muted-foreground: 0 0% 40%;
+    /* Muted - Light Gray */
+    --muted: 0 0% 88%;
+    /* #E0E0E0 */
+    --muted-foreground: 0 0% 30%;
 
-    /* Accent - Coral for highlights */
-    --accent: 0 100% 71%;
-    --accent-foreground: 0 0% 18%;
+    /* Accent - Soft Orange */
+    --accent: 38 96% 43%;
+    /* #D98E04 */
+    --accent-foreground: 0 0% 100%;
 
-    /* Success - Soft green */
+    /* Success - Soft Green */
     --success: 122 39% 49%;
     --success-foreground: 0 0% 100%;
 
@@ -45,21 +52,22 @@
     --destructive-foreground: 0 0% 98%;
 
     /* Borders & inputs */
-    --border: 40 30% 82%;
-    --input: 40 30% 82%;
-    --ring: 42 65% 58%;
+    --border: 0 0% 80%;
+    --input: 0 0% 80%;
+    --ring: 210 29% 24%;
 
-    --radius: 1rem;
+    --radius: 0.5rem;
+    /* 8px for sharper look */
 
     /* Sidebar */
-    --sidebar-background: 40 100% 97%;
-    --sidebar-foreground: 0 0% 18%;
-    --sidebar-primary: 42 65% 58%;
-    --sidebar-primary-foreground: 0 0% 18%;
-    --sidebar-accent: 40 30% 92%;
-    --sidebar-accent-foreground: 0 0% 18%;
-    --sidebar-border: 40 30% 82%;
-    --sidebar-ring: 42 65% 58%;
+    --sidebar-background: 60 5% 95%;
+    --sidebar-foreground: 0 0% 20%;
+    --sidebar-primary: 210 29% 24%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 88%;
+    --sidebar-accent-foreground: 0 0% 20%;
+    --sidebar-border: 0 0% 80%;
+    --sidebar-ring: 210 29% 24%;
   }
 
   .dark {
@@ -117,7 +125,7 @@
 
   /* Senior-friendly base text size */
   html {
-    font-size: 18px;
+    font-size: 20px;
   }
 }
 
@@ -136,7 +144,7 @@
   }
 
   .btn-senior {
-    @apply min-h-[56px] text-lg font-semibold px-6 rounded-xl;
+    @apply min-h-[56px] text-lg font-bold px-6 rounded-lg border-2;
   }
 
   .touch-target {

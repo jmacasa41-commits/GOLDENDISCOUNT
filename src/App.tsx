@@ -9,26 +9,40 @@ import Category from "./pages/Category";
 import DiscountDetail from "./pages/DiscountDetail";
 import SavedDiscounts from "./pages/SavedDiscounts";
 import NotFound from "./pages/NotFound";
+import { LocationProvider } from "@/contexts/LocationContext";
+import { SavedDiscountsProvider } from "@/contexts/SavedDiscountsContext";
+
+import Nearby from "./pages/Nearby";
+
+
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Welcome />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/category/:categoryId" element={<Category />} />
-          <Route path="/discount/:discountId" element={<DiscountDetail />} />
-          <Route path="/saved" element={<SavedDiscounts />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
+    <LocationProvider>
+      <SavedDiscountsProvider>
+        <TooltipProvider>
+
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Welcome />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/category/:categoryId" element={<Category />} />
+              <Route path="/discount/:discountId" element={<DiscountDetail />} />
+              <Route path="/saved" element={<SavedDiscounts />} />
+              <Route path="/nearby" element={<Nearby />} />
+
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
+        </TooltipProvider>
+      </SavedDiscountsProvider>
+    </LocationProvider>
+
   </QueryClientProvider>
 );
 

@@ -1,24 +1,22 @@
-import { useState } from "react";
 import { Heart, WifiOff } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { DiscountCard } from "@/components/DiscountCard";
 import { BottomNav } from "@/components/BottomNav";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-
-// Mock saved discounts
-const initialSavedDiscounts = [
-  { id: "1", businessName: "Golden Corral", discount: "15% off for 60+", distance: "0.5 miles" },
-  { id: "5", businessName: "Safeway", discount: "10% off on Tuesdays for 55+", distance: "0.3 miles" },
-];
+import { useSavedDiscounts } from "@/contexts/SavedDiscountsContext";
+import { discounts as allDiscounts } from "@/data/discounts";
 
 export default function SavedDiscounts() {
-  const [savedDiscounts, setSavedDiscounts] = useState(initialSavedDiscounts);
-  const [isOffline] = useState(false); // In real app, detect connectivity
+  const { savedIds, toggleSave } = useSavedDiscounts();
 
-  const handleRemove = (id: string) => {
-    setSavedDiscounts((prev) => prev.filter((d) => d.id !== id));
-  };
+  // Flatten discounts and filter by saved IDs
+  const savedDiscountsList = Object.values(allDiscounts)
+    .flat()
+    .filter((discount) => savedIds.has(discount.id));
+
+  // In a real app, you might check navigator.onLine or use a hook
+  const isOffline = false;
 
   return (
     <div className="min-h-screen bg-background pb-28">
@@ -35,17 +33,17 @@ export default function SavedDiscounts() {
       )}
 
       <main className="px-4 py-6">
-        {savedDiscounts.length > 0 ? (
+        {savedDiscountsList.length > 0 ? (
           <div className="space-y-4">
-            {savedDiscounts.map((discount) => (
+            {savedDiscountsList.map((discount) => (
               <DiscountCard
                 key={discount.id}
                 id={discount.id}
                 businessName={discount.businessName}
                 discount={discount.discount}
-                distance={discount.distance}
+                distance={discount.distance || ""} // Fallback if undefined in your type, though likely string
                 isSaved={true}
-                onSaveToggle={() => handleRemove(discount.id)}
+                onSaveToggle={() => toggleSave(discount.id)}
               />
             ))}
           </div>
