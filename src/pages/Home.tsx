@@ -88,14 +88,14 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background pb-32">
       {/* Clean Slate Header */}
-      <header className="bg-slate-header px-6 pt-10 pb-16 rounded-b-[3.5rem] shadow-lg relative overflow-hidden">
-        <div className="relative z-10 space-y-4">
+      <header className="bg-slate-header px-6 py-10 md:py-16 rounded-b-[3.5rem] shadow-lg relative overflow-hidden">
+        <div className="relative z-10 space-y-4 max-w-5xl mx-auto">
           <div className="flex items-center justify-between">
-            <div className="space-y-1">
-              <h1 className="text-senior-3xl font-black text-white leading-none">
+            <div className="space-y-2">
+              <h1 className="text-senior-2xl md:text-senior-3xl font-black text-white leading-none">
                 {getGreeting()}! 👋
               </h1>
-              <p className="text-senior-base text-white/90 font-medium">
+              <p className="text-lg md:text-senior-base text-white/90 font-medium">
                 Find discounts made for you
               </p>
             </div>
@@ -104,7 +104,7 @@ export default function Home() {
       </header>
 
       {/* Main Content Area */}
-      <main className="px-5 -mt-8 space-y-8 relative z-20">
+      <main className="px-5 -mt-8 space-y-8 relative z-20 max-w-5xl mx-auto">
         {/* Location Bar with Clean Design */}
         <div className="bg-white rounded-3xl p-1 shadow-md">
           <LocationBar
@@ -121,7 +121,7 @@ export default function Home() {
         )}
 
         {/* Suggested Discounts (curated, not location-based) */}
-        <section className="space-y-4">
+        <section className="space-y-6">
           <div className="px-2">
             <h2 className="text-senior-xl font-bold text-foreground">
               Suggested Discounts
@@ -131,27 +131,28 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="space-y-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {suggestedDiscounts.map((discount) => (
-              <DiscountCard
-                key={discount.id}
-                id={discount.id}
-                businessName={discount.businessName}
-                discount={discount.discount}
-                distance={discount.distance || ""}
-                isSaved={isSaved(discount.id)}
-                onSaveToggle={() => toggleSave(discount.id)}
-              />
+              <div key={discount.id} className="h-full">
+                <DiscountCard
+                  id={discount.id}
+                  businessName={discount.businessName}
+                  discount={discount.discount}
+                  distance={discount.distance || ""}
+                  isSaved={isSaved(discount.id)}
+                  onSaveToggle={() => toggleSave(discount.id)}
+                />
+              </div>
             ))}
           </div>
         </section>
 
         {/* Categories Section */}
         <section>
-          <h2 className="text-senior-xl font-bold text-slate-800 mb-4 px-2">
+          <h2 className="text-senior-xl font-bold text-slate-800 mb-6 px-2">
             Browse Discounts
           </h2>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
             {categories.map((category) => (
               <CategoryCard
                 key={category.title}

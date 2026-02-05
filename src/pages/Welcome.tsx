@@ -41,36 +41,42 @@ export default function Welcome() {
 
       <div className="w-full max-w-md text-center relative z-10 my-auto animate-premium-fade">
         {/* Logo & Headline Section */}
-        <div className="mb-16">
-          <div className="mb-10 flex justify-center transform transition-all duration-1000 active:scale-95">
-            <div className="relative">
-              <div className="absolute inset-0 bg-white/30 blur-3xl rounded-full scale-150 animate-pulse" />
-              <div className="bg-white p-8 rounded-full shadow-[0_25px_60px_-15px_rgba(0,0,0,0.3)] border-4 border-white/20 relative z-10">
-                <span className="text-7xl block transform hover:rotate-12 transition-transform">🌟</span>
+        <div className="mb-12 md:mb-16">
+          <div className="mb-8 md:mb-10 flex justify-center transform transition-all duration-1000 active:scale-95 px-4">
+            <div className="relative w-full max-w-[200px] md:max-w-[240px] aspect-square">
+              <div className="absolute inset-0 bg-white/30 blur-3xl rounded-full scale-110 animate-pulse" />
+              <div className="bg-white p-4 md:p-6 rounded-full shadow-[0_25px_60px_-15px_rgba(0,0,0,0.3)] border-4 border-white/20 relative z-10 w-full h-full flex items-center justify-center">
+                <img
+                  src="/icon-512.svg"
+                  alt="GoldenConnect Logo"
+                  className="w-full h-full object-contain transform hover:rotate-12 transition-transform duration-500"
+                />
               </div>
             </div>
           </div>
 
-          <div className="space-y-4">
-            <h1 className="text-senior-3xl font-black text-slate-800 tracking-tighter uppercase italic leading-none">
+          <div className="space-y-3 md:space-y-4 px-2">
+            <h1 className="text-senior-2xl md:text-senior-3xl font-black text-slate-800 tracking-tighter uppercase italic leading-[0.9] md:leading-none">
               GOLDEN<span className="opacity-60 not-italic font-light">CONNECT</span>
             </h1>
-            <div className="flex items-center justify-center gap-3 text-slate-700 py-1.5 px-5 bg-slate-100 rounded-full w-fit mx-auto border border-slate-300 shadow-md">
-              <span className="text-senior-sm font-black uppercase tracking-[0.2em]">A simple way for seniors to find discounts nearby.</span>
+            <div className="flex items-center justify-center gap-3 text-slate-700 py-2 px-6 bg-slate-100/90 backdrop-blur-sm rounded-2xl md:rounded-full w-full max-w-[90%] mx-auto border border-slate-300 shadow-sm overflow-hidden line-clamp-2">
+              <span className="text-[13px] md:text-senior-sm font-black uppercase tracking-wider md:tracking-[0.2em] leading-snug">
+                A simple way for seniors to find discounts nearby.
+              </span>
             </div>
           </div>
         </div>
 
         {/* Onboarding Interaction Area */}
-        <div className="space-y-6">
+        <div className="space-y-4 md:space-y-6 w-full px-2 md:px-0">
           {step === "welcome" && (
             <div className="animate-premium-scale">
-              <div className="bg-white rounded-[3rem] p-10 space-y-10 border-2 border-slate-200 shadow-xl">
-                <div className="space-y-4">
-                  <h2 className="text-senior-2xl font-black text-slate-800 leading-tight">
+              <div className="bg-white rounded-[2.5rem] md:rounded-[3rem] p-6 md:p-10 space-y-6 md:space-y-10 border-2 border-slate-200 shadow-xl mx-auto">
+                <div className="space-y-3 md:space-y-4">
+                  <h2 className="text-senior-xl md:text-senior-2xl font-black text-slate-800 leading-tight">
                     Welcome! 👋
                   </h2>
-                  <p className="text-senior-base text-slate-700 leading-relaxed font-medium">
+                  <p className="text-senior-base text-slate-700 leading-relaxed font-medium text-lg md:text-xl">
                     "Good news! Your exclusive senior discounts are available right now."
                   </p>
                 </div>
@@ -78,7 +84,7 @@ export default function Welcome() {
                 <div className="pt-2">
                   <Button
                     onClick={handleContinue}
-                    className="w-full btn-senior bg-primary hover:bg-primary/90 text-white hover:text-white py-10 rounded-2xl text-xl shadow-lg border-none transition-colors"
+                    className="w-full btn-senior bg-primary hover:bg-primary/90 text-white hover:text-white py-8 md:py-10 rounded-2xl text-xl shadow-lg border-none transition-colors h-auto min-h-[70px] md:min-h-[80px]"
                   >
                     CONTINUE
                   </Button>
@@ -89,36 +95,38 @@ export default function Welcome() {
 
           {step === "location" && (
             <div className="animate-premium-scale">
-              <div className="bg-white rounded-[3rem] p-10 space-y-10 border-2 border-slate-200 shadow-xl">
-                <div className="space-y-4">
-                  <div className="w-20 h-20 bg-primary/10 rounded-[1.5rem] flex items-center justify-center mx-auto mb-4 border-2 border-primary/30">
-                    <MapPin className="w-10 h-10 text-primary" strokeWidth={2.5} />
+              <div className="bg-white rounded-[2.5rem] md:rounded-[3rem] p-6 md:p-10 space-y-6 md:space-y-10 border-2 border-slate-200 shadow-xl mx-auto">
+                <div className="space-y-3 md:space-y-4">
+                  <div className="w-16 h-16 md:w-20 md:h-20 bg-primary/10 rounded-[1.25rem] md:rounded-[1.5rem] flex items-center justify-center mx-auto mb-2 border-2 border-primary/30">
+                    <MapPin className="w-8 h-8 md:w-10 md:h-10 text-primary" strokeWidth={2.5} />
                   </div>
-                  <h2 className="text-senior-xl font-black text-slate-800 uppercase text-center">
+                  <h2 className="text-senior-lg md:text-senior-xl font-black text-slate-800 uppercase text-center">
                     Show Discounts Near You
                   </h2>
                 </div>
 
-                <div className="mt-4 space-y-4">
+                <div className="mt-4 space-y-3 md:space-y-4">
                   <Button
                     onClick={handleUseCurrentLocation}
                     disabled={isLoading}
-                    className="w-full btn-senior bg-primary hover:bg-primary/90 text-white hover:text-white border-none shadow-lg transition-colors"
+                    className="w-full btn-senior bg-primary hover:bg-primary/90 text-white hover:text-white border-none shadow-lg transition-colors h-auto min-h-[70px] md:min-h-[80px]"
                   >
                     {isLoading ? (
-                      <Loader2 className="w-8 h-8 mr-3 animate-spin" />
+                      <Loader2 className="w-7 h-7 md:w-8 md:h-8 mr-2 md:mr-3 animate-spin" />
                     ) : (
-                      <MapPin className="w-8 h-8 mr-3" />
+                      <MapPin className="w-7 h-7 md:w-8 md:h-8 mr-2 md:mr-3" />
                     )}
-                    {isLoading ? "Searching..." : "Use My Current Location"}
+                    <span className="text-lg md:text-xl">
+                      {isLoading ? "Searching..." : "Use My Current Location"}
+                    </span>
                   </Button>
 
                   <Button
                     onClick={handleManualLocationClick}
                     variant="outline"
-                    className="w-full btn-senior bg-white hover:bg-slate-50 text-slate-800 hover:text-slate-800 border-2 border-slate-300 shadow-md transition-colors"
+                    className="w-full btn-senior bg-white hover:bg-slate-50 text-slate-800 hover:text-slate-800 border-2 border-slate-300 shadow-md transition-colors h-auto min-h-[70px] md:min-h-[80px]"
                   >
-                    Enter Town or City
+                    <span className="text-lg md:text-xl">Enter Town or City</span>
                   </Button>
                 </div>
               </div>

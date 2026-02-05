@@ -24,8 +24,8 @@ export function DiscountCard({
     <div className="bg-card border-2 border-border rounded-2xl p-6 shadow-md active:scale-[0.98] transition-transform duration-100">
       <div className="flex flex-col gap-5">
         {/* Header: Business Name and Save Button */}
-        <div className="flex items-start justify-between gap-4">
-          <h3 className="text-senior-xl font-bold text-foreground leading-tight flex-1">
+        <div className="flex items-start justify-between gap-3 sm:gap-4">
+          <h3 className="text-senior-lg md:text-senior-xl font-bold text-foreground leading-tight flex-1 break-words line-clamp-2">
             {businessName}
           </h3>
           <button
@@ -33,11 +33,11 @@ export function DiscountCard({
               e.preventDefault();
               onSaveToggle?.();
             }}
-            className="touch-target flex items-center justify-center rounded-xl hover:bg-muted/50 transition-colors flex-shrink-0"
+            className="touch-target flex items-center justify-center rounded-xl hover:bg-muted/50 transition-colors flex-shrink-0 -mt-2 -mr-2"
             aria-label={isSaved ? "Remove from saved" : "Save discount"}
           >
             <Heart
-              className={`w-9 h-9 transition-colors ${isSaved ? "fill-red-500 text-red-500" : "text-muted-foreground"}`}
+              className={`w-8 h-8 md:w-9 md:h-9 transition-colors ${isSaved ? "fill-red-500 text-red-500" : "text-muted-foreground"}`}
               strokeWidth={2}
             />
           </button>
@@ -45,8 +45,8 @@ export function DiscountCard({
 
         <Link to={`/discount/${id}`} className="block space-y-5">
           {/* Discount Display - Clean Dark Design */}
-          <div className="bg-slate-800 rounded-2xl p-6 shadow-lg border-l-4 border-primary relative overflow-hidden">
-            <p className="text-senior-2xl text-white font-black leading-none drop-shadow-sm relative z-10">
+          <div className="bg-slate-800 rounded-2xl p-4 sm:p-6 shadow-lg border-l-4 border-primary relative overflow-hidden">
+            <p className="text-senior-xl md:text-senior-2xl text-white font-black leading-tight drop-shadow-sm relative z-10 break-words">
               {discount}
             </p>
           </div>
