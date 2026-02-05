@@ -77,7 +77,7 @@ export default function Welcome() {
                     Welcome! 👋
                   </h2>
                   <p className="text-senior-base text-slate-700 leading-relaxed font-medium text-lg md:text-xl">
-                    "Good news! Your exclusive senior discounts are available right now."
+                    Good news! Your exclusive senior discounts are available right now.
                   </p>
                 </div>
 
