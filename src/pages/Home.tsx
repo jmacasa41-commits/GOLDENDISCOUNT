@@ -86,24 +86,32 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background pb-28">
-      {/* Header */}
-      <header className="bg-primary text-primary-foreground px-6 py-8 rounded-b-3xl shadow-md">
-        <h1 className="text-senior-2xl font-bold mb-2">
-          {getGreeting()}! 👋
-        </h1>
-        <p className="text-senior-base text-primary-foreground/90">
-          Find discounts made for you
-        </p>
+    <div className="min-h-screen bg-background pb-32">
+      {/* Clean Slate Header */}
+      <header className="bg-slate-header px-6 pt-10 pb-16 rounded-b-[3.5rem] shadow-lg relative overflow-hidden">
+        <div className="relative z-10 space-y-4">
+          <div className="flex items-center justify-between">
+            <div className="space-y-1">
+              <h1 className="text-senior-3xl font-black text-white leading-none">
+                {getGreeting()}! 👋
+              </h1>
+              <p className="text-senior-base text-white/90 font-medium">
+                Find discounts made for you
+              </p>
+            </div>
+          </div>
+        </div>
       </header>
 
-      {/* Main Content */}
-      <main className="px-4 py-6 space-y-6">
-        {/* Location Bar */}
-        <LocationBar
-          location={location?.address || (isLoading ? "Detecting your location..." : "Select Location")}
-          onChangeLocation={() => setShowManualDialog(true)}
-        />
+      {/* Main Content Area */}
+      <main className="px-5 -mt-8 space-y-8 relative z-20">
+        {/* Location Bar with Clean Design */}
+        <div className="bg-white rounded-3xl p-1 shadow-md">
+          <LocationBar
+            location={location?.address || (isLoading ? "Detecting location..." : "Select Location")}
+            onChangeLocation={() => setShowManualDialog(true)}
+          />
+        </div>
 
         {/* Location error / permission handling */}
         {error && (
@@ -140,7 +148,7 @@ export default function Home() {
 
         {/* Categories Section */}
         <section>
-          <h2 className="text-senior-xl font-bold text-foreground mb-4 px-2">
+          <h2 className="text-senior-xl font-bold text-slate-800 mb-4 px-2">
             Browse Discounts
           </h2>
           <div className="grid grid-cols-2 gap-4">

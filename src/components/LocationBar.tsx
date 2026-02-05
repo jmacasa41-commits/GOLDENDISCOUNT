@@ -9,13 +9,15 @@ export function LocationBar({ location, onChangeLocation }: LocationBarProps) {
   return (
     <button
       onClick={onChangeLocation}
-      className="flex items-center gap-2 px-4 py-3 bg-muted rounded-xl w-full hover:bg-muted/80 transition-colors"
+      className="flex items-center gap-4 px-6 py-5 bg-white/50 backdrop-blur-md rounded-2xl w-full hover:bg-white/80 transition-all duration-300 shadow-md border-2 border-primary/10 group min-h-[72px]"
     >
-      <MapPin className="w-6 h-6 text-primary" />
-      <span className="text-senior-base font-medium text-foreground flex-1 text-left">
+      <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary transition-colors flex-shrink-0">
+        <MapPin className="w-7 h-7 text-primary group-hover:text-white transition-colors" strokeWidth={2.5} />
+      </div>
+      <span className="text-senior-base font-black text-foreground flex-1 text-left">
         {location}
       </span>
-      <ChevronDown className="w-5 h-5 text-muted-foreground" />
+      <ChevronDown className="w-7 h-7 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0" />
     </button>
   );
 }

@@ -2,152 +2,178 @@
 @tailwind components;
 @tailwind utilities;
 
-/* GOLDEN CONNECT Design System - Senior-Friendly Theme
-
-   Warm, accessible colors with high contrast for 50+ users
-   All colors in HSL format */
-
 @layer base {
   :root {
-    /* Core backgrounds - Warm Gray */
-    --background: 60 5% 95%;
-    /* #F4F4F2 */
-    --foreground: 0 0% 20%;
-    /* #333333 */
+    /* Clean Modern Theme - Dark Blue + Yellow Accents */
+    --background: 0 0% 98%;
+    --foreground: 220 15% 20%;
 
-    /* Card surfaces */
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 20%;
-
-    /* Popover */
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 20%;
-
-    /* Primary - Dark Navy (Professional & Trustworthy) */
-    --primary: 210 29% 24%;
-    /* #2C3E50 */
+    /* Primary - Yellow/Amber for buttons and CTAs only */
+    --primary: 43 96% 56%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary - Soft Gold (Accent) */
-    --secondary: 43 51% 57%;
-    /* #C8A95A */
-    --secondary-foreground: 0 0% 20%;
+    /* Secondary - Neutral Gray */
+    --secondary: 220 10% 90%;
+    --secondary-foreground: 220 15% 20%;
 
     /* Muted - Light Gray */
-    --muted: 0 0% 88%;
-    /* #E0E0E0 */
-    --muted-foreground: 0 0% 30%;
+    --muted: 220 10% 95%;
+    --muted-foreground: 220 10% 40%;
 
-    /* Accent - Soft Orange */
-    --accent: 38 96% 43%;
-    /* #D98E04 */
+    /* Accent - Dark Blue/Slate for headers */
+    --accent: 215 25% 27%;
     --accent-foreground: 0 0% 100%;
 
-    /* Success - Soft Green */
-    --success: 122 39% 49%;
+    /* Success - Teal */
+    --success: 165 60% 45%;
     --success-foreground: 0 0% 100%;
 
     /* Destructive */
-    --destructive: 0 84% 60%;
+    --destructive: 0 70% 55%;
     --destructive-foreground: 0 0% 98%;
 
-    /* Borders & inputs */
-    --border: 0 0% 80%;
-    --input: 0 0% 80%;
-    --ring: 210 29% 24%;
+    /* Borders & inputs - Soft Gray */
+    --border: 220 13% 88%;
+    --input: 220 13% 88%;
+    --ring: 43 96% 56%;
 
-    --radius: 0.5rem;
-    /* 8px for sharper look */
-
-    /* Sidebar */
-    --sidebar-background: 60 5% 95%;
-    --sidebar-foreground: 0 0% 20%;
-    --sidebar-primary: 210 29% 24%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 88%;
-    --sidebar-accent-foreground: 0 0% 20%;
-    --sidebar-border: 0 0% 80%;
-    --sidebar-ring: 210 29% 24%;
+    --radius: 1.5rem;
   }
 
   .dark {
-    --background: 213 52% 12%;
-    --foreground: 40 100% 97%;
-
-    --card: 213 52% 16%;
-    --card-foreground: 40 100% 97%;
-
-    --popover: 213 52% 16%;
-    --popover-foreground: 40 100% 97%;
-
-    --primary: 42 65% 58%;
-    --primary-foreground: 0 0% 18%;
-
-    --secondary: 40 100% 97%;
-    --secondary-foreground: 213 52% 24%;
-
-    --muted: 213 40% 20%;
-    --muted-foreground: 40 50% 70%;
-
-    --accent: 0 100% 71%;
-    --accent-foreground: 0 0% 18%;
-
-    --success: 122 39% 49%;
-    --success-foreground: 0 0% 100%;
-
-    --destructive: 0 62% 30%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 213 40% 25%;
-    --input: 213 40% 25%;
-    --ring: 42 65% 58%;
-
-    --sidebar-background: 213 52% 12%;
-    --sidebar-foreground: 40 100% 97%;
-    --sidebar-primary: 42 65% 58%;
-    --sidebar-primary-foreground: 0 0% 18%;
-    --sidebar-accent: 213 40% 20%;
-    --sidebar-accent-foreground: 40 100% 97%;
-    --sidebar-border: 213 40% 25%;
-    --sidebar-ring: 42 65% 58%;
+    --background: 220 20% 10%;
+    --foreground: 0 0% 95%;
+    --card: 220 20% 15%;
+    --card-foreground: 0 0% 95%;
+    --primary: 43 96% 56%;
+    --primary-foreground: 0 0% 100%;
+    --accent: 215 25% 27%;
+    --accent-foreground: 0 0% 100%;
+    --border: 220 20% 25%;
+    --ring: 43 96% 56%;
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
 
-  /* Senior-friendly base text size */
   html {
-    font-size: 20px;
+    font-size: 22px;
   }
 }
 
-/* Senior-friendly utility classes */
 @layer utilities {
-  .text-senior-xl {
-    @apply text-2xl font-semibold leading-relaxed;
+  .bg-slate-header {
+    background: linear-gradient(135deg, hsl(215, 25%, 27%), hsl(215, 20%, 35%));
   }
 
-  .text-senior-lg {
-    @apply text-xl font-medium leading-relaxed;
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-2xl border border-white/20 shadow-2xl;
+  }
+
+  .glass-nav {
+    @apply bg-white backdrop-blur-3xl border-t border-slate-200;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  .animate-premium-fade {
+    animation: premium-fade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-premium-scale {
+    animation: premium-scale 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+
+  .animate-premium-glow {
+    animation: premium-glow 3s ease-in-out infinite;
+  }
+
+  @keyframes premium-fade {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes premium-scale {
+    from {
+      transform: scale(0.9);
+      opacity: 0;
+    }
+
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes premium-glow {
+
+    0%,
+    100% {
+      filter: drop-shadow(0 0 15px rgba(217, 164, 4, 0.3));
+    }
+
+    50% {
+      filter: drop-shadow(0 0 35px rgba(217, 164, 4, 0.6));
+    }
+  }
+
+  /* Senior-Friendly Typography - Larger Sizes */
+  .text-senior-sm {
+    @apply text-base font-medium leading-relaxed;
   }
 
   .text-senior-base {
-    @apply text-lg leading-relaxed;
+    @apply text-xl font-medium leading-relaxed;
   }
 
+  .text-senior-lg {
+    @apply text-2xl font-semibold leading-relaxed;
+  }
+
+  .text-senior-xl {
+    @apply text-3xl font-bold leading-tight;
+  }
+
+  .text-senior-2xl {
+    @apply text-4xl font-black leading-tight;
+  }
+
+  .text-senior-3xl {
+    @apply text-5xl font-black leading-none;
+  }
+
+  /* Senior-Friendly Buttons - Larger Touch Targets */
   .btn-senior {
-    @apply min-h-[56px] text-lg font-bold px-6 rounded-lg border-2;
+    @apply h-auto min-h-[64px] text-xl font-bold px-8 py-5 rounded-2xl border-2 whitespace-normal;
   }
 
+  /* Touch Targets - Extra Large for Accessibility */
   .touch-target {
-    @apply min-h-[56px] min-w-[56px];
+    @apply min-h-[64px] min-w-[64px];
+  }
+
+  .touch-target-lg {
+    @apply min-h-[72px] min-w-[72px];
+  }
+
+  /* Spacing Utilities for Better Layout */
+  .space-senior {
+    @apply space-y-6;
+  }
+
+  .space-senior-lg {
+    @apply space-y-8;
   }
 }

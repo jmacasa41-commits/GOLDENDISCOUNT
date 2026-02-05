@@ -21,11 +21,11 @@ export function DiscountCard({
   mechanicsSummary,
 }: DiscountCardProps) {
   return (
-    <div className="bg-card border border-border rounded-lg p-5 shadow-sm active:scale-[0.98] transition-transform duration-100">
-      <div className="flex flex-col gap-3">
+    <div className="bg-card border-2 border-border rounded-2xl p-6 shadow-md active:scale-[0.98] transition-transform duration-100">
+      <div className="flex flex-col gap-5">
         {/* Header: Business Name and Save Button */}
-        <div className="flex items-start justify-between">
-          <h3 className="text-senior-xl font-bold text-foreground leading-tight">
+        <div className="flex items-start justify-between gap-4">
+          <h3 className="text-senior-xl font-bold text-foreground leading-tight flex-1">
             {businessName}
           </h3>
           <button
@@ -33,38 +33,41 @@ export function DiscountCard({
               e.preventDefault();
               onSaveToggle?.();
             }}
-            className="touch-target flex items-center justify-center -mt-2 -mr-2"
+            className="touch-target flex items-center justify-center rounded-xl hover:bg-muted/50 transition-colors flex-shrink-0"
             aria-label={isSaved ? "Remove from saved" : "Save discount"}
           >
             <Heart
-              className={`w-8 h-8 transition-colors ${isSaved ? "fill-red-500 text-red-500" : "text-muted-foreground"}`}
+              className={`w-9 h-9 transition-colors ${isSaved ? "fill-red-500 text-red-500" : "text-muted-foreground"}`}
+              strokeWidth={2}
             />
           </button>
         </div>
 
-        <Link to={`/discount/${id}`} className="block space-y-3">
-          {/* Main Discount - High Contrast */}
-          <div className="bg-primary/5 rounded-md p-3 border-l-4 border-primary">
-            <p className="text-senior-2xl text-primary font-bold leading-none">
+        <Link to={`/discount/${id}`} className="block space-y-5">
+          {/* Discount Display - Clean Dark Design */}
+          <div className="bg-slate-800 rounded-2xl p-6 shadow-lg border-l-4 border-primary relative overflow-hidden">
+            <p className="text-senior-2xl text-white font-black leading-none drop-shadow-sm relative z-10">
               {discount}
             </p>
           </div>
 
           {/* Details Row */}
-          <div className="flex items-center justify-between mt-2">
-            <div className="flex items-center gap-2 text-muted-foreground">
-              <MapPin className="w-6 h-6" />
-              <span className="text-senior-base font-medium">{distance}</span>
+          <div className="flex items-center justify-between gap-4">
+            <div className="flex items-center gap-3 text-muted-foreground">
+              <div className="w-12 h-12 bg-muted rounded-full flex items-center justify-center">
+                <MapPin className="w-7 h-7 text-slate-600" strokeWidth={2.5} />
+              </div>
+              <span className="text-senior-base font-bold">{distance}</span>
             </div>
 
-            <div className="bg-secondary text-primary-foreground px-4 py-2 rounded-md font-bold text-sm">
+            <div className="bg-primary text-primary-foreground px-5 py-3 rounded-xl font-bold text-base shadow-md hover:bg-primary/90 transition-colors">
               View Details
             </div>
           </div>
 
           {/* Optional Promo Summary */}
           {mechanicsSummary && (
-            <p className="pt-2 text-senior-base text-muted-foreground border-t border-border/50">
+            <p className="pt-3 text-senior-base text-muted-foreground border-t-2 border-border/50">
               {mechanicsSummary}
             </p>
           )}
